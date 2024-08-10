@@ -17,4 +17,15 @@ class CouponRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Coupon::class);
     }
+
+    public function findOneByCode(string $code): ?Coupon
+    {
+        $qb = $this->createQueryBuilder('coupon');
+
+        $qb
+            ->where('coupon.code = :code')
+            ->setParameter('code', $code);
+
+        return $qb->getQuery()->getOneOrNullResult();
+    }
 }
