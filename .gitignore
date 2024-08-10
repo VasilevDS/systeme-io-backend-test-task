@@ -13,3 +13,8 @@ compose.override.yaml
 ###< symfony/framework-bundle ###
 
 /docker_var
+
+###> phpunit/phpunit ###
+/phpunit.xml
+.phpunit.result.cache
+###< phpunit/phpunit ###
