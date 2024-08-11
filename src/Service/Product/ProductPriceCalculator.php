@@ -15,7 +15,7 @@ use App\Service\TaxNumber\TaxCountryHelper;
 use Symfony\Component\DependencyInjection\Attribute\TaggedIterator;
 use Traversable;
 
-final readonly class ProductPriceCalculator
+readonly class ProductPriceCalculator
 {
     /** @var CouponApplierInterface[] */
     private array $couponAppliers;

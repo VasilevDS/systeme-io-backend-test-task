@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Tests\Unit\Service;
+namespace App\Tests\Unit\Service\Product;
 
 use App\Dto\Product\ProductCalculatePriceDto;
 use App\Entity\Coupon;

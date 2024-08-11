@@ -10,7 +10,7 @@ use App\Validation\EntityExists;
 use App\Validation\TaxNumber\TaxNumberConstraint;
 use Symfony\Component\Validator\Constraints\NotBlank;
 
-final class ProductCalculatePriceDto
+readonly class ProductCalculatePriceDto
 {
     public function __construct(
         #[EntityExists(Product::class)]
