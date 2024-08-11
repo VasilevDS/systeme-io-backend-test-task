@@ -6,8 +6,8 @@ namespace App\Tests\Unit\Service\Product;
 
 use App\Dto\Product\ProductPurchaseDto;
 use App\Enum\PaymentProcessors\PaymentProcessorEnum;
-use App\Service\PaymentProcessors\PayPalPaymentProcessor;
-use App\Service\PaymentProcessors\StripePaymentProcessor;
+use App\Service\PaymentProcessors\PayPalPaymentProcessorAdapter;
+use App\Service\PaymentProcessors\StripePaymentProcessorAdapter;
 use App\Service\Product\ProductPriceCalculator;
 use App\Service\Product\ProductPurchaser;
 use ArrayIterator;
@@ -27,8 +27,8 @@ final class ProductPurchaserTest extends TestCase
 
         $this->productPurchaser = new ProductPurchaser(
             new ArrayIterator([
-                'paypal' => new PayPalPaymentProcessor(),
-                'stripe' => new StripePaymentProcessor(),
+                'paypal' => new PayPalPaymentProcessorAdapter(),
+                'stripe' => new StripePaymentProcessorAdapter(),
             ]),
             $this->productPriceCalculator,
         );
